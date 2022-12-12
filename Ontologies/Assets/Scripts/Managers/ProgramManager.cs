@@ -47,12 +47,21 @@ public class ProgramManager : MonoBehaviour
                 dbPediaDataList = (from data in dbPediaDataList where (wikiDataList.Contains(data.Name)) select data).ToList();
             }
 
-            // Show Ranking Data
-            interfaceManager.LoadRankingList(dbPediaDataList);
-            interfaceManager.ActiveRankingScreen();
+            if (dbPediaDataList.Count > 0)
+            {
+                // Show Ranking Data
+                interfaceManager.LoadRankingList(dbPediaDataList);
+                interfaceManager.ActiveRankingScreen();
+            }
+            else
+            {
+                // Show Empty Query Result
+                interfaceManager.ActiveQueryError();
+            }
         }
-        catch(Exception)
+        catch(Exception e)
         {
+            Debug.Log(e.Message);
             interfaceManager.ActiveErrorScreen();
         }
     } 

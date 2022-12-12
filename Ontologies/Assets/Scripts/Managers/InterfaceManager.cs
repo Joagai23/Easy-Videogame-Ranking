@@ -11,6 +11,7 @@ public class InterfaceManager : MonoBehaviour
     public GameObject rankingScreen;
     public GameObject errorText;
     public GameObject loadingWheel;
+    public GameObject queryError;
 
     // Prefab References
     public GameObject queryPrefab;
@@ -183,6 +184,7 @@ public class InterfaceManager : MonoBehaviour
         queryScreen.SetActive(false);
         rankingScreen.SetActive(false);
         errorText.SetActive(false);
+        queryError.SetActive(false);
     }
 
     // Show Query Screen 
@@ -193,6 +195,7 @@ public class InterfaceManager : MonoBehaviour
         queryScreen.SetActive(true);
         rankingScreen.SetActive(false);
         errorText.SetActive(false);
+        queryError.SetActive(false);
     }
 
     // Show Error Screen
@@ -203,6 +206,7 @@ public class InterfaceManager : MonoBehaviour
         queryScreen.SetActive(false);
         rankingScreen.SetActive(false);
         errorText.SetActive(true);
+        queryError.SetActive(false);
     }
 
     // Show Ranking Screen
@@ -213,6 +217,18 @@ public class InterfaceManager : MonoBehaviour
         queryScreen.SetActive(false);
         rankingScreen.SetActive(true);
         errorText.SetActive(false);
+        queryError.SetActive(false);
+    }
+
+    // Show Query Error
+    public void ActiveQueryError()
+    {
+        loadingScreen.SetActive(true);
+        loadingWheel.SetActive(false);
+        queryScreen.SetActive(false);
+        rankingScreen.SetActive(true);
+        errorText.SetActive(false);
+        queryError.SetActive(true);
     }
 
     // Destroy Ranking Screen and Show Query
