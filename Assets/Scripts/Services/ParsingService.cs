@@ -45,6 +45,12 @@ public class ParsingService : MonoBehaviour
     // Parse String Results into List of Parameters
     public void ParseParameterResults(string response, List<ParameterModel> dataList)
     {
+        // Clear DataList
+        if(dataList.Count > 0)
+        {
+            dataList.Clear();
+        }
+
         // Parse response into JSON
         JObject search = JObject.Parse(response);
 

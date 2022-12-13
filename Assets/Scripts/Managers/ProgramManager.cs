@@ -13,12 +13,12 @@ public class ProgramManager : MonoBehaviour
     public APIController apiController;
 
     // Obtain and show DataBase Properties
-    async void Start()
+    private async void Start()
     {
-        await LoadDataAsync();
+        ReloadData();
     }
 
-    public async Task LoadDataAsync()
+    public async void ReloadData()
     {
         interfaceManager.ActiveLoadingScreen();
 

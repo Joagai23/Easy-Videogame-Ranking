@@ -10,6 +10,6 @@ public class ReloadButton : MonoBehaviour, IPointerClickHandler
     // OnClick Event
     public void OnPointerClick(PointerEventData eventData)
     {
-        programManager.LoadDataAsync();
+        programManager.ReloadData();
     }
 }
